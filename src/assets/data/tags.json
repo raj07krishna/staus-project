@@ -1,0 +1,12 @@
+[
+	{ "id" : 1, "name" : "Onboarding" },
+	{ "id" : 2, "name" : "Document" },
+	{ "id" : 3, "name" : "Customer Issue" },
+	{ "id" : 4, "name" : "Urgent" },
+	{ "id" : 5, "name" : "Security" },
+	{ "id" : 6, "name" : "UI" },
+	{ "id" : 7, "name" : "API" },
+	{ "id" : 8, "name" : "Bug" },
+	{ "id" : 9, "name" : "Change Request" },
+	{ "id" : 10, "name" : "Commitment" }
+]

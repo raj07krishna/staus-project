@@ -1,0 +1,30 @@
+.example-card {
+  width: 300px;
+  height: 150px;
+}
+
+.example-header-image {
+  background-image: url("./../../assets/profile.png");
+  background-size: cover;
+}
+
+.mat-card-header {
+  display: flex;
+  flex-direction: column !important;
+}
+
+.dueDate {
+  color: rgba(0, 0, 0, 0.54);
+}
+:host::ng-deep .mat-card-header-text {
+  margin: 0 !important;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.p-xl {
+  padding-left: 1em;
+}

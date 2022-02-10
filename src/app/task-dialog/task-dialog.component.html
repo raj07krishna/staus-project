@@ -1,0 +1,56 @@
+<mat-dialog-content class="dialogSize">
+    <div style="justify-content:space-between;" class="header flex flex-row">
+        <p>Add Task</p>
+        <mat-icon>close</mat-icon>
+    </div>
+    <div class="flex flex-col">
+        <div class="row1">
+            <div>Task Name</div>
+            <mat-form-field appearance="fill" class="w-full">
+                <input matInput type="text" [(ngModel)]="taskName">
+            </mat-form-field>
+        </div>
+        <div class="row2">
+            <div style="justify-content:space-between;" class="flex flex-row">
+                <div class="date">
+                    <div>Due Date</div>
+                    <mat-form-field appearance="fill">
+                        <input matInput [matDatepicker]="datepicker" [(ngModel)] = "dateValue">
+                        <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+                        <mat-datepicker #datepicker>
+                            <mat-datepicker-actions>
+                                <button mat-button matDatepickerCancel>Cancel</button>
+                                <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+                            </mat-datepicker-actions>
+                        </mat-datepicker>
+                    </mat-form-field>
+                </div>
+                <div class="assigned">
+                    <div>Assigned To</div>
+                    <mat-form-field appearance="fill">
+                        <mat-select [(ngModel)]="assignedPerson">
+                            <mat-option *ngFor="let assignee of assigneeList" [value]="assignee.id">
+                                {{assignee.firstName}}
+                                {{assignee.lastName}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+        <div class="row3">
+            <div>Status</div>
+            <mat-form-field appearance="fill">
+                <mat-label>Status</mat-label>
+                <mat-select [(ngModel)]="selectedStatus" >
+                    <mat-option *ngFor="let status of statusList" [value]="status.id">
+                        {{status.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+    <mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close>Cancel</button>
+        <button (click)="sendData()" mat-button [mat-dialog-close]="true" cdkFocusInitial>Add</button>
+      </mat-dialog-actions>
+</mat-dialog-content>

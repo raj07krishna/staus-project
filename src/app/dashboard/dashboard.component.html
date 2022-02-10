@@ -1,0 +1,50 @@
+<div class="header flex flex-row">
+    <div class="left">
+        <h2>
+            Prejoining Task Board
+        </h2>
+        <h3>
+            Here you can manage the status of all prekoining tasks
+        </h3>
+    </div>
+    <div class="right">
+        <button (click)="openTaskDialog()" mat-raised-button color="primary">
+            <mat-icon>add</mat-icon>
+            Add task
+        </button>
+    </div>
+</div>
+<br>
+<div style="justify-content: space-between;" class="flex flex-row">
+    <div class="col1">
+        <div class="font-weight-600">
+            Not Started <span>({{notStartedCount}})</span>
+        </div>
+        <div class="flex flex-col">
+            <div class=cards *ngFor="let card of notStartedCards">
+                <app-card-design [cardDetails]=card></app-card-design>
+            </div>
+        </div>
+    </div>
+    <div class="col2">
+        <div class="font-weight-600">
+            In Progress <span>({{inProgressCount}})</span>
+        </div>
+
+        <div class="flex flex-col">
+            <div class=cards *ngFor="let card of inProgressCards">
+                <app-card-design [cardDetails]=card></app-card-design>
+            </div>
+        </div>
+    </div>
+    <div class="col3">
+        <div class="font-weight-600">
+            Completed <span>({{completedCount}})</span>
+        </div>
+        <div class="flex flex-col">
+            <div class=cards *ngFor="let card of completedCards">
+                <app-card-design [cardDetails]=card></app-card-design>
+            </div>
+        </div>
+    </div>
+</div>

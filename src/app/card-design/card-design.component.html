@@ -1,0 +1,17 @@
+<mat-card class="example-card">
+    <mat-card-header >
+        <mat-card-title>{{cardDetails.name}}</mat-card-title>
+        <mat-card-subtitle>ASSIGNED TO</mat-card-subtitle>
+        <div style="align-items: center;" class="flex flex-row">
+            <div mat-card-avatar class="example-header-image"></div>
+            <p class="p-xl">{{cardDetails.assignedTo}}</p>
+        </div>
+    </mat-card-header>
+    <br>
+    <mat-card-content>
+        <mat-label> DUE ON</mat-label>
+        <div class="dueDate">
+            {{cardDetails.dueDate | date}}
+        </div>
+    </mat-card-content>
+</mat-card>
